@@ -1,0 +1,77 @@
+/* style.css - Modern, High-Performance Styling */
+:root {
+    --primary: #0056b3;       /* Corporate Blue */
+    --secondary: #2c3e50;     /* Dark Slate */
+    --accent: #1abc9c;        /* Teal for Highlights */
+    --bg-light: #f8f9fa;      /* Clean White/Grey */
+    --text-dark: #333333;
+    --shadow: 0 4px 15px rgba(0,0,0,0.05);
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+/* Navigation Bar */
+nav {
+    background: #ffffff;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--secondary); 
+    font-weight: 500; 
+    transition: var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--primary); border-bottom: 2px solid var(--accent); }
+
+/* Page Layouts */
+.container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.page-title { text-align: center; margin-bottom: 40px; color: var(--secondary); font-size: 2.2rem; }
+
+/* Cards (Used for Experience, Skills, etc.) */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary);
+    transition: var(--transition);
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.card h3 { color: var(--primary); margin-bottom: 10px; }
+.card .date { font-size: 0.9rem; color: #777; margin-bottom: 10px; display: block; font-style: italic; }
+
+/* Gallery Grid */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.gallery-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+
+/* Buttons */
+.btn { 
+    display: inline-block; 
+    background: var(--primary); 
+    color: #fff; 
+    padding: 10px 25px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    transition: var(--transition);
+}
+.btn:hover { background: var(--accent); }
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-links { flex-direction: column; display: none; width: 100%; text-align: center; }
+    .nav-links.active { display: flex; }
+}
